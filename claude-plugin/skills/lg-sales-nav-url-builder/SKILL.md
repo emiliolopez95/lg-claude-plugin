@@ -1,4 +1,5 @@
 ---
+name: lg-sales-nav-url-builder
 description: Construir y validar URLs de LinkedIn Sales Navigator. Resolver IDs via typeahead, encoding correcto, validar volumen y calidad antes de crear IMPORT_LIST.
 ---
 

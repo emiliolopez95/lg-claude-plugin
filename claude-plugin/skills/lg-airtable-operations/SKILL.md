@@ -1,4 +1,5 @@
 ---
+name: lg-airtable-operations
 description: Referencia de las tools MCP para operar contra Airtable de Let Growth (clients, campaigns, todo_lists). Todas las tools pasan por el MCP `letgrowth`.
 ---
 

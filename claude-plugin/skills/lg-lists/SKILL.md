@@ -1,4 +1,5 @@
 ---
+name: lg-lists
 description: Punto de entrada para crear listas de leads para clientes de Let Growth. Orquesta el flujo completo (info cliente, campana, lista anterior, crear lista).
 ---
 

@@ -1,4 +1,5 @@
 ---
+name: lg-search-list
 description: Crea un SEARCH_LIST (Google/Facebook/Google Maps) en Airtable para clientes de lavanderia. Construye los campos especificos y llama a la tool MCP `list_create_search`.
 ---
 

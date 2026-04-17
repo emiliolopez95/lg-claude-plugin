@@ -1,4 +1,5 @@
 ---
+name: lg-apollo-url-builder
 description: Construir y validar URLs de busqueda de Apollo. Resolver filtros via typeahead (titulos, ubicaciones, industrias), validar volumen y calidad antes de crear IMPORT_LIST.
 ---
 

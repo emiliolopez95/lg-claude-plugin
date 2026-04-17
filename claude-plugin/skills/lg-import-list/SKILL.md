@@ -1,4 +1,5 @@
 ---
+name: lg-import-list
 description: Crea un IMPORT_LIST (IMPORT_CSV) en Airtable desde URLs de Apollo o LinkedIn Sales Navigator. Valida volumen y calidad antes de crear, luego llama `list_create_import`.
 ---
 

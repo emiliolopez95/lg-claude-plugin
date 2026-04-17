@@ -1,7 +1,7 @@
 {
   "name": "letgrowth",
-  "version": "1.0.0",
-  "description": "Let Growth operations toolkit — crear listas, operar Airtable, validar URLs de Apollo/Sales Navigator",
+  "version": "1.0.1",
+  "description": "Let Growth operations toolkit \u2014 crear listas, operar Airtable, validar URLs de Apollo/Sales Navigator",
   "author": {
     "name": "Let Growth",
     "email": "team@letgrowth.com"

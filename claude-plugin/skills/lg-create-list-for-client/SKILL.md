@@ -1,4 +1,5 @@
 ---
+name: lg-create-list-for-client
 description: Flujo guiado para crear una lista de leads para un cliente. Obtiene info del cliente, campana activa, contexto de listas previas, y decide el tipo de lista (SEARCH_LIST vs IMPORT_LIST).
 ---
 
