@@ -1,5 +1,8 @@
 {
   "name": "letgrowth-tools",
+  "metadata": {
+    "description": "Let Growth internal tools marketplace: plugins for list creation, Airtable ops, and Apollo/Sales Nav workflows"
+  },
   "owner": {
     "name": "Let Growth",
     "email": "team@letgrowth.com"
