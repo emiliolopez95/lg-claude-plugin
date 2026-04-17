@@ -1,18 +1,10 @@
 {
   "name": "letgrowth",
-  "version": "1.0.1",
-  "description": "Let Growth operations toolkit \u2014 crear listas, operar Airtable, validar URLs de Apollo/Sales Navigator",
+  "version": "1.0.2",
+  "description": "Let Growth operations toolkit — crear listas, operar Airtable, validar URLs de Apollo/Sales Navigator. Requires LETGROWTH_API_KEY env var.",
   "author": {
     "name": "Let Growth",
     "email": "team@letgrowth.com"
   },
-  "homepage": "https://letgrowth.com",
-  "userConfig": {
-    "api_key": {
-      "type": "string",
-      "title": "Let Growth API Key",
-      "description": "Tu LETGROWTH_API_KEY. Pidela a un admin en https://app.letgrowth.com/admin/api-keys",
-      "sensitive": true
-    }
-  }
+  "homepage": "https://letgrowth.com"
 }
