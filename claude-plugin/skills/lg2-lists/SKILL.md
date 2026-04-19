@@ -62,5 +62,6 @@ Resumen:
 
 ## Skills relacionados en el plugin
 
-- `lg2-list-create` — flujo paso a paso para crear una lista
+- `lg2-list-create` — flujo paso a paso para crear un `lg2_list` (output curado)
+- `lg2-discovery-create` — flujo paso a paso para crear un discovery (input de scraping via Sales Nav URL)
 - `lg2-operations` — referencia completa de las tools LG2

@@ -52,6 +52,42 @@ Returns array con `id`, `client_domain`, `name`, `status`, `ai_match_criteria`, 
 
 ---
 
+## Discoveries (lg2_icp_discoveries)
+
+### `lg2_discovery_list`
+
+Lista discoveries de un ICP, con `asset_hits` y `people_hits` counts.
+
+```
+args: { "icp_id": "<uuid>" }
+```
+
+### `lg2_discovery_get`
+
+Detalle de un discovery individual.
+
+```
+args: { "discovery_id": "<id>" }
+```
+
+### `lg2_discovery_create`
+
+Crea un discovery desde una URL de LinkedIn Sales Nav. Auto-detecta `source_type`, valida duplicados.
+
+```
+args: {
+  "icp_id": "<uuid>",
+  "url": "https://www.linkedin.com/sales/search/people?...",
+  "name": "Enterprise USA (LinkedIn)"
+}
+```
+
+Ver skill `lg2-discovery-create` para el flujo completo.
+
+**Solo Sales Nav por ahora** — Apollo y otros sources no estan soportados todavia.
+
+---
+
 ## Lists (lg2_lists)
 
 ### `lg2_list_list`
@@ -143,7 +179,6 @@ Returns array con `id`, `name`, `description`, `ai_instruction`, `scope`.
 ## Cosas que NO estan expuestas (por diseno)
 
 - Crear/editar ICPs (`lg2_icps`) — se configuran desde el admin panel
-- Crear discoveries (`lg2_icp_discoveries`) — requiere validacion de URL y config compleja; por ahora se crea via CLI (`npm run lg2 -- discovery create ...`) o admin panel
 - Editar buyer personas — admin panel
 - Operaciones del pipeline (runner, dispatcher) — son admin/ops
 - Agregar contactos a listas — el pipeline lo hace auto, no el equipo
