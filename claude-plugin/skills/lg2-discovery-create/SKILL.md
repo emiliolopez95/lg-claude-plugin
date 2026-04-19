@@ -46,7 +46,7 @@ tool: client_locate
 args: { "domain": "cliente.com" }
 ```
 
-- `recommended_system = "lg2"` o `"both"` → continuar
+- `recommended_system = "lg2"` → continuar
 - `recommended_system = "lg1"` → usar `lg-import-list` en vez, no este skill
 - `recommended_system = "unknown"` → cliente no existe, frenar
 

@@ -20,7 +20,7 @@ tool: client_locate
 args: { "domain": "cliente.com" }
 ```
 
-- `recommended_system = "lg2"` o `"both"` → continuar
+- `recommended_system = "lg2"` → continuar
 - `recommended_system = "lg1"` → este cliente esta en LG1, el usuario quizas se confundio. Avisarle antes de continuar.
 - `recommended_system = "unknown"` → cliente no existe, frenar.
 

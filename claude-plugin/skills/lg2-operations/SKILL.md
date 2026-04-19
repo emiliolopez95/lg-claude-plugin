@@ -22,19 +22,18 @@ args: { "domain": "cliente.com" }
 Returns:
 ```json
 {
-  "in_lg1": boolean,
-  "in_lg2": boolean,
-  "recommended_system": "lg1" | "lg2" | "both" | "unknown",
-  "lg2_icp_count": number,
+  "is_lg2": boolean,                     // Postgres clients.is_lg2 flag (hard discriminator)
+  "in_airtable": boolean,                // present in Airtable (LG1 onboarding); every client has this
+  "recommended_system": "lg1" | "lg2" | "unknown",
+  "lg2_icp_count": number,               // informational
   "lg1_client"?: { name, is_laundry, client_type }
 }
 ```
 
 Interpretacion:
-- `"lg1"` → usar skills `lg-*`
-- `"lg2"` → usar skills `lg2-*`
-- `"both"` → preguntar al usuario cual quiere
-- `"unknown"` → cliente no existe en ninguno, frenar
+- `"lg2"` → usar skills `lg2-*` (is_lg2=true gana siempre)
+- `"lg1"` → usar skills `lg-*` (cliente activo en Airtable, no marcado como LG2)
+- `"unknown"` → cliente no existe, frenar
 
 ---
 
