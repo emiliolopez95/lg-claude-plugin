@@ -25,10 +25,10 @@ Punto de entrada para crear listas de leads para un cliente.
 
 ## Paso 1: Obtener info del cliente
 
-Usa la tool MCP `client_get`:
+Usa la tool MCP `lg1_client_get`:
 
 ```
-tool: client_get
+tool: lg1_client_get
 args: { "domain": "cliente.com" }
 ```
 
@@ -43,7 +43,7 @@ Devuelve: `{ found, id, domain, name, icp_summary, is_laundry, is_serviced, clie
 ## Paso 2: Definir Campaign ID
 
 ```
-tool: client_campaigns
+tool: lg1_client_campaigns
 args: { "domain": "cliente.com", "active_only": true }
 ```
 
@@ -56,7 +56,7 @@ args: { "domain": "cliente.com", "active_only": true }
 ## Paso 3: Obtener ultimas listas del cliente
 
 ```
-tool: client_lists
+tool: lg1_client_lists
 args: { "domain": "cliente.com", "days": 60, "limit": 15 }
 ```
 
@@ -68,7 +68,7 @@ Devuelve listas recientes con metricas clave:
 Tambien chequea listas en progreso:
 
 ```
-tool: client_lists
+tool: lg1_client_lists
 args: { "domain": "cliente.com", "only_in_progress": true }
 ```
 

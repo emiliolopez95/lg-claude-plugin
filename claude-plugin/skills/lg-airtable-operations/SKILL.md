@@ -13,7 +13,7 @@ Referencia de las tools MCP para operar con Airtable de Let Growth. Todas las ll
 
 ## Flujo de aprobacion de listas
 
-**Todas las listas nuevas se crean con `search_workflow_process = "NEEDS_HUMAN_REVIEW"`.** Esto lo hacen automaticamente las tools `list_create_search` y `list_create_import`.
+**Todas las listas nuevas se crean con `search_workflow_process = "NEEDS_HUMAN_REVIEW"`.** Esto lo hacen automaticamente las tools `lg1_list_create_search` y `lg1_list_create_import`.
 
 El humano revisa en Airtable y cambia el status cuando aprueba. No hay que notificar ni esperar confirmacion en chat.
 
@@ -23,7 +23,7 @@ Al crear listas: usa las tools (setean los workflow fields auto) y luego informa
 
 ## Tools de lectura
 
-### `client_get`
+### `lg1_client_get`
 
 Info de un cliente por dominio.
 
@@ -47,11 +47,11 @@ Devuelve:
 }
 ```
 
-- `is_laundry=true` → usar `list_create_search`
-- `is_laundry=false` → usar `list_create_import`
+- `is_laundry=true` → usar `lg1_list_create_search`
+- `is_laundry=false` → usar `lg1_list_create_import`
 - **Siempre** verificar `is_serviced=true` antes de crear listas
 
-### `clients_needing_leads`
+### `lg1_clients_needing_leads`
 
 Clientes activos con leads pendientes.
 
@@ -61,7 +61,7 @@ args: { "week": "current" }   // o "next"
 
 Filtra: `is_serviced=1`, leads_needed>0, no `USED_FOR_OPS`.
 
-### `client_campaigns`
+### `lg1_client_campaigns`
 
 Campanas de Smartlead del cliente.
 
@@ -71,7 +71,7 @@ args: { "domain": "cliente.com", "active_only": true }
 
 El `name` de la campana es el **numero SL** que se pasa como `sl_campaign_number` en `list_create_*`.
 
-### `client_lists`
+### `lg1_client_lists`
 
 Listas recientes del cliente con metricas.
 
@@ -87,11 +87,11 @@ Para chequear listas en progreso: `only_in_progress: true`.
 
 ## Tools de escritura
 
-### `list_create_search`
+### `lg1_list_create_search`
 
 Crea SEARCH_LIST (Google/Facebook/Google Maps). Para lavanderias y similar. Ver skill `lg-search-list` para los campos especificos.
 
-### `list_create_import`
+### `lg1_list_create_import`
 
 Crea IMPORT_LIST (IMPORT_CSV) desde URL Apollo o Sales Nav. Ver skill `lg-import-list`.
 

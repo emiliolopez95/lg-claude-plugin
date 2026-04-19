@@ -1,11 +1,11 @@
 ---
 name: lg-search-list
-description: Crea un SEARCH_LIST (Google/Facebook/Google Maps) en Airtable para clientes de lavanderia. Construye los campos especificos y llama a la tool MCP `list_create_search`.
+description: Crea un SEARCH_LIST (Google/Facebook/Google Maps) en Airtable para clientes de lavanderia. Construye los campos especificos y llama a la tool MCP `lg1_list_create_search`.
 ---
 
 # Let Growth Search List Creation
 
-Crear Search Lists usando la tool `list_create_search` del MCP.
+Crear Search Lists usando la tool `lg1_list_create_search` del MCP.
 
 **Cuando usar:** crear una lista tipo SEARCH_LIST para un cliente de lavanderia.
 
@@ -17,7 +17,7 @@ Crear Search Lists usando la tool `list_create_search` del MCP.
 
 ## Paso 1: Construir los args
 
-La tool `list_create_search` recibe:
+La tool `lg1_list_create_search` recibe:
 
 ```json
 {
@@ -116,7 +116,7 @@ Para otros (latam): 5-10 keywords que den muchos resultados para su industria.
 ## Paso 2: Crear la lista
 
 ```
-tool: list_create_search
+tool: lg1_list_create_search
 args: { ...los campos de arriba... }
 ```
 

@@ -20,7 +20,7 @@ Crear un discovery tipo LinkedIn Sales Nav para un ICP en LG2.
 | Concepto | `todo_list` con `search_type="IMPORT_CSV"` | `lg2_icp_discovery` |
 | Sistema | Airtable | Postgres |
 | Skill equivalente | `lg-import-list` | este skill |
-| Tool de creacion | `list_create_import` | `lg2_discovery_create` |
+| Tool de creacion | `lg1_list_create_import` | `lg2_discovery_create` |
 | Corre | workflow de scraping | discover stage del pipeline |
 
 ---

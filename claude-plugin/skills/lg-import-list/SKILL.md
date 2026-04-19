@@ -1,11 +1,11 @@
 ---
 name: lg-import-list
-description: Crea un IMPORT_LIST (IMPORT_CSV) en Airtable desde URLs de Apollo o LinkedIn Sales Navigator. Valida volumen y calidad antes de crear, luego llama `list_create_import`.
+description: Crea un IMPORT_LIST (IMPORT_CSV) en Airtable desde URLs de Apollo o LinkedIn Sales Navigator. Valida volumen y calidad antes de crear, luego llama `lg1_list_create_import`.
 ---
 
 # Let Growth Import List Creation
 
-Crear Import Lists usando la tool `list_create_import` del MCP, con URLs de LinkedIn Sales Navigator o Apollo.
+Crear Import Lists usando la tool `lg1_list_create_import` del MCP, con URLs de LinkedIn Sales Navigator o Apollo.
 
 **Cuando usar:** crear una lista tipo IMPORT_LIST para un cliente (todos excepto lavanderias).
 
@@ -100,7 +100,7 @@ Verificar **>=50% de los resultados de la primera pagina sean buen fit** para el
 ## Paso 3: Crear la lista
 
 ```
-tool: list_create_import
+tool: lg1_list_create_import
 args: {
   "name": "Cliente - Roles Ubicacion",
   "client_domain": "cliente.com",

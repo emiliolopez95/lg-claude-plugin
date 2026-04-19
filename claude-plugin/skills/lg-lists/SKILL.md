@@ -44,8 +44,8 @@ El skill principal te dirige segun el tipo de lista:
 
 ## Tools MCP disponibles (resumen)
 
-**Airtable (lectura):** `client_get`, `clients_needing_leads`, `client_campaigns`, `client_lists`
-**Airtable (escritura):** `list_create_search`, `list_create_import`
+**Airtable (lectura):** `lg1_client_get`, `lg1_clients_needing_leads`, `lg1_client_campaigns`, `lg1_client_lists`
+**Airtable (escritura):** `lg1_list_create_search`, `lg1_list_create_import`
 **Apollo:** `apollo_search_tags`, `apollo_search_organizations`, `apollo_search_by_url`
 **Sales Nav:** `sales_nav_typeahead`, `sales_nav_search_by_url`, `sales_nav_enrich_company`
 **Scraping compartido:** `scrape_first_page`
