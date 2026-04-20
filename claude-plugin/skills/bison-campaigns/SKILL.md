@@ -56,6 +56,13 @@ Todas aceptan **`client_domain` O `workspace_id`** (pasa uno, no ambos — `clie
 | `bison_campaign_archive` | Soft-archive (reversible desde UI). **Preferido sobre delete.** |
 | `bison_campaign_delete` | **PERMANENTE, no reversible.** Solo usar si el usuario dice "borrar permanentemente". |
 
+### Sequence (emails del flow)
+
+| Tool | Qué hace |
+|---|---|
+| `bison_campaign_sequence_list` | Lee los steps de una campaña — order, email_subject, email_body (HTML), wait_in_days, thread_reply, variant flag. |
+| `bison_campaign_sequence_update_step` | Edita un step — email_subject, email_body, wait_in_days o thread_reply. Pasa solo los campos que cambias. IDs de step se preservan → no afecta leads, scheduled emails, reply tracking. |
+
 ---
 
 ## Flujos típicos
@@ -111,7 +118,28 @@ tool: bison_campaign_resume args: { "client_domain": "X.com", "campaign_id": N }
 - Campaña vieja que queres sacar de la vista → `bison_campaign_archive` (reversible)
 - Campaña de test que nunca vas a necesitar → `bison_campaign_delete` (PERMANENTE, confirmar con user primero)
 
-### F. Monitoring (¿cómo va X?)
+### F. Editar el copy de un email en la sequence
+
+```
+1. bison_campaign_sequence_list(client_domain="X.com", campaign_id=14)
+   → ve los steps, identifica el step_id del que querés cambiar
+
+2. bison_campaign_sequence_update_step({
+     client_domain: "X.com",
+     campaign_id: 14,
+     step_id: <id>,
+     email_subject: "Nueva línea de asunto",
+     email_body: "<p>Nuevo copy HTML con {{first_name}}</p>"
+   })
+```
+
+**Notas:**
+- Bajo el capo es un PUT bulk (Bison no tiene endpoint granular) pero los step IDs se preservan → leads enrolados, scheduled emails, y reply tracking NO se afectan
+- `email_body` debe ser HTML válido. Merge tags como `{{first_name}}` se preservan
+- `wait_in_days` = días desde el step anterior (el primer step típicamente 0)
+- `thread_reply: true` hace que el email se mande como reply en el mismo chain (útil para followups "¿viste mi mail pasado?")
+
+### G. Monitoring (¿cómo va X?)
 
 **"¿Cómo va la campaña de Kudert?"** — sin ID de campaña:
 ```
