@@ -34,6 +34,18 @@ Skill para crear y controlar campañas en **Bison** (la plataforma de email outr
 
 Todas aceptan **`client_domain` O `workspace_id`** (pasa uno, no ambos — `client_domain` es lo normal, el resolver busca el workspace).
 
+### Lectura / monitoring
+
+| Tool | Qué hace |
+|---|---|
+| `bison_workspace_list` | Lista workspaces de Bison (uno por cliente). |
+| `bison_workspace_stats` | Totales agregados del workspace (emails_sent, opened, replied, bounced, interested + %). Date range default últimos 30 días. |
+| `bison_workspace_chart` | Series de tiempo diarias por evento — útil para trends. |
+| `bison_campaign_list` | Lista campañas del workspace con sus stats. Filtros opcionales: status, search, tag_ids, page. |
+| `bison_campaign_get` | Detalle de una campaña (stats completos, config, tags). Usar para "¿cómo va la campaña X?" o "¿está activa?". |
+
+### Escritura
+
 | Tool | Qué hace |
 |---|---|
 | `bison_campaign_create` | Crea campaña vacía (status=draft). Solo pide `name` + `type` opcional. NO configura sequence/senders/schedule. |
@@ -98,6 +110,28 @@ tool: bison_campaign_resume args: { "client_domain": "X.com", "campaign_id": N }
 
 - Campaña vieja que queres sacar de la vista → `bison_campaign_archive` (reversible)
 - Campaña de test que nunca vas a necesitar → `bison_campaign_delete` (PERMANENTE, confirmar con user primero)
+
+### F. Monitoring (¿cómo va X?)
+
+**"¿Cómo va la campaña de Kudert?"** — sin ID de campaña:
+```
+1. bison_workspace_stats(client_domain="kudert.com")  → totales workspace (últimos 30d)
+2. bison_campaign_list(client_domain="kudert.com", status="active")  → campañas corriendo
+```
+
+**"¿Cómo va la campaña 14?"** — con ID:
+```
+tool: bison_campaign_get
+args: { "client_domain": "kudert.com", "campaign_id": 14 }
+```
+Devuelve: status, emails_sent, replied, bounced, interested, total_leads, completion_percentage, max_emails_per_day, etc.
+
+**"¿Subió la tasa de reply esta semana?"**:
+```
+tool: bison_workspace_chart
+args: { "client_domain": "kudert.com", "days": 14 }
+```
+Devuelve series de tiempo — comparar `replied` vs `sent` día a día.
 
 ---
 
