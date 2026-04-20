@@ -1,7 +1,7 @@
 {
   "name": "letgrowth",
-  "version": "1.6.0",
-  "description": "Let Growth operations toolkit — LG1 (listas Airtable) + LG2 (lg2 lists, discoveries, ICPs, personas, pipeline debug). Requires LETGROWTH_API_KEY env var.",
+  "version": "1.7.0",
+  "description": "Let Growth operations toolkit — LG1 (listas Airtable) + LG2 (lg2 lists, discoveries, ICPs, personas, pipeline debug) + Bison campaign admin. Requires LETGROWTH_API_KEY env var.",
   "author": {
     "name": "Let Growth",
     "email": "team@letgrowth.com"
