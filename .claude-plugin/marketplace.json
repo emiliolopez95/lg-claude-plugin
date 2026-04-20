@@ -12,7 +12,7 @@
       "name": "letgrowth",
       "source": "./claude-plugin",
       "description": "Crear listas de leads, operar Airtable, construir URLs de Apollo/Sales Nav via el MCP de Let Growth",
-      "version": "1.4.1",
+      "version": "1.5.0",
       "author": {
         "name": "Let Growth"
       }
